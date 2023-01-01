@@ -1,0 +1,319 @@
+{
+    "____comment": "This file was generated with inery-abigen. DO NOT EDIT ",
+    "version": "inery::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "addinventory",
+            "base": "",
+            "fields": [
+                {
+                    "name": "inventory_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "warehouse_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "product_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "addproduct",
+            "base": "",
+            "fields": [
+                {
+                    "name": "warehouse_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "product_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "product_description",
+                    "type": "string"
+                },
+                {
+                    "name": "unit_of_measurement",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "addwarehouse",
+            "base": "",
+            "fields": [
+                {
+                    "name": "warehouse_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "warehouse_name",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "capacity",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "delivery",
+            "base": "",
+            "fields": [
+                {
+                    "name": "delivery_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "delivery_date",
+                    "type": "time_point"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "inventory",
+            "base": "",
+            "fields": [
+                {
+                    "name": "inventory_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "warehouse_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "product_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "base": "",
+            "fields": [
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "warehouse_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "product_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                },
+                {
+                    "name": "order_date",
+                    "type": "time_point"
+                },
+                {
+                    "name": "expected_delivery_date",
+                    "type": "time_point"
+                }
+            ]
+        },
+        {
+            "name": "placeorder",
+            "base": "",
+            "fields": [
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "inventory_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                },
+                {
+                    "name": "expected_delivery_date_days",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "base": "",
+            "fields": [
+                {
+                    "name": "product_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "product_description",
+                    "type": "string"
+                },
+                {
+                    "name": "unit_of_measurement",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "updelivery",
+            "base": "",
+            "fields": [
+                {
+                    "name": "delivery_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "warehouse",
+            "base": "",
+            "fields": [
+                {
+                    "name": "warehouse_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "warehouse_name",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "capacity",
+                    "type": "uint64"
+                },
+                {
+                    "name": "load",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "warehouses",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "warehouse",
+                    "type": "warehouse"
+                },
+                {
+                    "name": "products",
+                    "type": "product[]"
+                },
+                {
+                    "name": "inventory",
+                    "type": "inventory[]"
+                },
+                {
+                    "name": "orders",
+                    "type": "order[]"
+                },
+                {
+                    "name": "delivery",
+                    "type": "delivery[]"
+                },
+                {
+                    "name": "tx_hash",
+                    "type": "checksum256"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "addinventory",
+            "type": "addinventory",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "addproduct",
+            "type": "addproduct",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "addwarehouse",
+            "type": "addwarehouse",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "placeorder",
+            "type": "placeorder",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "updelivery",
+            "type": "updelivery",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "warehouses",
+            "type": "warehouses",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}

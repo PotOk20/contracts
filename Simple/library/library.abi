@@ -1,0 +1,212 @@
+{
+    "____comment": "This file was generated with inery-abigen. DO NOT EDIT ",
+    "version": "inery::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "LibraryItem",
+            "base": "",
+            "fields": [
+                {
+                    "name": "book_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "author",
+                    "type": "string"
+                },
+                {
+                    "name": "isbn",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "quantity",
+                    "type": "int32"
+                },
+                {
+                    "name": "tags",
+                    "type": "string[]"
+                },
+                {
+                    "name": "categories",
+                    "type": "string[]"
+                }
+            ]
+        },
+        {
+            "name": "Patron",
+            "base": "",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "borrowedItems",
+                    "type": "pair_LibraryItem_time_point[]"
+                },
+                {
+                    "name": "overdueFines",
+                    "type": "float64"
+                }
+            ]
+        },
+        {
+            "name": "addbook",
+            "base": "",
+            "fields": [
+                {
+                    "name": "library_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "book_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "author",
+                    "type": "string"
+                },
+                {
+                    "name": "isbn",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "addlibrary",
+            "base": "",
+            "fields": [
+                {
+                    "name": "library_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "borrowbook",
+            "base": "",
+            "fields": [
+                {
+                    "name": "library_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "book_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "libraries",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "items",
+                    "type": "LibraryItem[]"
+                },
+                {
+                    "name": "patrons",
+                    "type": "Patron[]"
+                }
+            ]
+        },
+        {
+            "name": "pair_LibraryItem_time_point",
+            "base": "",
+            "fields": [
+                {
+                    "name": "first",
+                    "type": "LibraryItem"
+                },
+                {
+                    "name": "second",
+                    "type": "time_point"
+                }
+            ]
+        },
+        {
+            "name": "returnbook",
+            "base": "",
+            "fields": [
+                {
+                    "name": "library_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "book_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "addbook",
+            "type": "addbook",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "addlibrary",
+            "type": "addlibrary",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "borrowbook",
+            "type": "borrowbook",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "returnbook",
+            "type": "returnbook",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "libraries",
+            "type": "libraries",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}

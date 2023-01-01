@@ -1,2 +1,1 @@
-# contracts
-superior value contracts for database management on blockchain
+Varius models of value contracts
